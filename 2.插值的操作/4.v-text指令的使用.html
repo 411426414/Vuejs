@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-once指令的使用</title>
+</head>
+<body>
+<!--
+  不推荐使用v-text，因为会覆盖标签里面的内容
+-->
+  <div id="app">
+    <h2>{{msg}},姓名</h2>
+    <h2 v-text="msg">,姓名</h2>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        msg: '基本模板'
+      }
+    })
+  </script>
+</body>
+</html>
