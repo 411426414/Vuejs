@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue计数器案例</title>
+</head>
+<body>
+
+    <div id="app">
+        <h1>当前计数：{{num}}</h1>
+<!--        <button v-on:click="num++">+</button>-->
+<!--        <button @click="num&#45;&#45;">-</button>-->
+        <button v-on:click="increment">+</button>
+        <button @click="subtraction">-</button>
+        <!--
+            @click是v-on:click的简写
+            语法糖：旨在使内容更容易阅误，但不入任何新内容的语法
+        -->
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>//this：prox代理
+        const app = new Vue({
+            el: '#app',
+            data: {
+                num: 0
+            },
+            methods: {
+                increment: function () {
+                    this.num++
+                    console.log('increment')
+                },
+                subtraction: function () {
+                    console.log('subtraction')
+                    this.num--
+                }
+            }
+        })
+
+        //之前的JQuery
+        //1.拿出button元素
+        // 2.添加监听事件
+    </script>
+
+</body>
+</html>
