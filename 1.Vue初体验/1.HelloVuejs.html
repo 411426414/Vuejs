@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HelloVue.js</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+    <div id="app">
+        <h1>{{msg}}</h1>
+    </div>
+
+    <script type="text/javascript">
+        //let(变量) 、 const(常量)
+        // 编程范式：声明式编程
+        const vm = new Vue({
+            el: '#app', //用于挂载要管理的元素
+            data: {//定义数据
+                msg: '12345678'
+            }
+        })
+
+    // 创建Vue实例时把#app交给了vm管理了，就会对解析#app语法，比如说 {{msg}} 就会解析，解析时发现里面有一个变量，就会在data中找这个变量，如果有定义这个变量就把值显示出来
+
+    // 元素js的方法(编程范式：命令式编程)
+    // 1.创建div元素，设置ID属性
+
+    // 2.定义一个变量的msg
+
+    // 3.将msg变量放在前面的div元素中显示
+
+    // 4.修改msg的数据
+
+    // 5.将修改后的数据再次替换到div元素
+    </script>
+</body>
+</html>
