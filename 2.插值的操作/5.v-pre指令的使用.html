@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-once指令的使用</title>
+</head>
+<body>
+<!--
+  v-pre用于跳过这个元素和它子元素的编译过程,用于显示原本的Mustache语法。
+-->
+  <div id="app">
+    <h2>{{msg}}</h2>
+    <h2 v-pre>{{msg}}</h2>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        msg: '基本模板'
+      }
+    })
+  </script>
+</body>
+</html>
