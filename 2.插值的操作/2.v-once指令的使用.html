@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-once指令的使用</title>
+</head>
+<body>
+<!--
+  v-once:
+    该指令后面不需要跟任何表达式(比如之前的v-for后面是由跟表达式的)
+    该指令表示元素和组件(组件后面才会学习)只渲染- 次,不会随着数据的改变而改变。
+
+-->
+  <div id="app">
+    <h2>{{msg}}</h2>
+    <h2 v-once>{{msg}}</h2>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        msg: '基本模板'
+      }
+    })
+  </script>
+</body>
+</html>
