@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-once指令的使用</title>
+</head>
+<body>
+<!--
+  可能希望的是按照HTML格式进行解析,并且显示对应的内容。
+  该指令后面往往会跟上一个string类型,会将string的html解析出来并且进行渲染
+-->
+  <div id="app">
+    <h2>{{url}}</h2>
+    <h2 v-html="url"></h2>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        url: '<a href="https://www.baidu.com/">百度一下</a>'
+      }
+    })
+  </script>
+</body>
+</html>
