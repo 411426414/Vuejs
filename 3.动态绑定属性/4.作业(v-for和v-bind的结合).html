@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-for和v-bind的联合使用</title>
+</head>
+<body>
+
+<!--作业需求：点击列表中的哪一项，该项变为红色-->
+  <div id="app">
+    <ul>
+<!--      <li v-for="item in movies">{{item}}</li>-->
+      <li v-for="(item, index) in movies">{{index}}.{{item}}</li>
+    </ul>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        movies: ['A计划', '战狼', '流浪地球', 'NBA']
+      }
+    })
+  </script>
+</body>
+</html>
