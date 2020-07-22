@@ -2,9 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>$Title$</title>
+  <title>v-bind动态绑定class(数组语法)</title>
 </head>
 <body>
-$END$
+
+  <div id="app">
+    <h2 class="title" v-bind:class="['active','line']">v-bind动态绑定class(数组语法)</h2>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        msg: '基本模板'
+      }
+    })
+  </script>
 </body>
 </html>
