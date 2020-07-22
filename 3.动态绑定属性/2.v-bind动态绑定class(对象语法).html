@@ -12,11 +12,11 @@
 <body>
 
   <div id="app">
-    <!--也可以通过判断，传入多个值-->
-    <h2 v-bind:class="{active:isActive,line:isLine}">{{msg}}</h2>
+    <!--直接通过{}绑定一个类，也可以通过判断，传入多个值-->
+    <h2 v-bind:class="{active:isActive,line:isLine}">直接通过{}绑定一个类</h2>
     <!--和普通的类同时存在，并不冲突-->
-    <h2 class="title" v-bind:class="{active:isActive,line:isLine}">{{msg}}</h2>
-    <h2 class="title" v-bind:class="getClasses()">{{msg}}</h2>
+    <h2 class="title" v-bind:class="{active:isActive,line:isLine}">普通的类同时存在</h2>
+    <h2 class="title" v-bind:class="getClasses()">methods方法</h2>
     <button @click="btnClick">按钮</button>
   </div>
 
