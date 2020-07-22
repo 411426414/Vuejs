@@ -8,7 +8,11 @@
 <body>
 
       <div id="app">
-        {{msg}}
+        <!-- 错误的做法:这里不可以使用mustache语法-->
+        <!--<img src="{{ imgURL}}" alt-=">-->
+        <!--正确的做法:使用v-bind指令-->
+
+        <img v-bind:src="imgUrl" alt="">
       </div>
 
       <script src="../js/vue.js"></script>
@@ -16,7 +20,8 @@
         const app = new Vue({
           el: '#app',
           data: {
-            msg: '基本模板'
+            msg: '基本模板',
+            imgUrl: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1421043483,554405077&fm=26&gp=0.jpg'
           }
         })
       </script>
