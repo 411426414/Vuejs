@@ -12,7 +12,11 @@
 <body>
 
   <div id="app">
+    <!--也可以通过判断，传入多个值-->
+    <h2 v-bind:class="{active:isActive,line:isLine}">{{msg}}</h2>
+    <!--和普通的类同时存在，并不冲突-->
     <h2 class="title" v-bind:class="{active:isActive,line:isLine}">{{msg}}</h2>
+    <h2 class="title" v-bind:class="getClasses()">{{msg}}</h2>
     <button @click="btnClick">按钮</button>
   </div>
 
@@ -28,6 +32,10 @@
       methods: {
         btnClick: function () {
           this.isActive = !this.isActive
+        },
+        //如果过于复杂，可以放在一个methods
+        getClasses: function () {
+          return {active: this.isActive,line: this.isLine}
         }
       }
     })
