@@ -3,6 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>v-for和v-bind的联合使用</title>
+  <style>
+    .active{
+      color: red;
+    }
+  </style>
 </head>
 <body>
 
@@ -10,7 +15,9 @@
   <div id="app">
     <ul>
 <!--      <li v-for="item in movies">{{item}}</li>-->
-      <li v-for="(item, index) in movies">{{index}}.{{item}}</li>
+      <li v-for="(item, index) in movies"
+          :class="{active: currentIndex === index}"
+          @click="liClick(index)">{{index}}.{{item}}</li>
     </ul>
   </div>
 
@@ -19,7 +26,13 @@
     const app = new Vue({
       el: '#app',
       data: {
-        movies: ['A计划', '战狼', '流浪地球', 'NBA']
+        movies: ['A计划', '战狼', '流浪地球', 'NBA'],
+        currentIndex: 0
+      },
+      methods: {
+        liClick: function (index) {
+          this.currentIndex = index
+        }
       }
     })
   </script>
