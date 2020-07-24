@@ -46,5 +46,12 @@
 
 - 生命周期函数
 
+## 二、插值语法
 
+- mustachei语法
+- v-once
+- v-html
+- v-text
+- v-pre:{}
+- v-cloak:斗篷
 
