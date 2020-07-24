@@ -55,3 +55,25 @@
 - v-pre:{}
 - v-cloak:斗篷
 
+## 三、v-bind
+
+### 1.v-bind绑定基本属性
+- v-bind:sr
+- :href
+- 
+
+### 2. v-bind动态绑定class
+
+- 对象语法:作业：class='{类名：boolen}'
+- 数组语法
+- 
+
+### 3. v-bind动态绑定style
+
+- 对象语法
+- 数组语法
+
+### 4. 计算属性
+
+- 案例一：firstName + lastName
+- 案例二：books ---> price
