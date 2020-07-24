@@ -9,6 +9,8 @@
   <div id="app">
     <h2>{{firstName + ' ' + lastName}}</h2>
     <h2>{{firstName}} {{lastName}}</h2>
+    <h2>{{getFullName()}}</h2>
+    <h2>{{FullName}}</h2>
   </div>
 
   <script src="../js/vue.js"></script>
@@ -16,8 +18,19 @@
     const app = new Vue({
       el: '#app',
       data: {
-        firstName: 'Zheng',
-        lastName: 'Jie'
+        firstName: 'Tom',
+        lastName: 'Smith'
+      },
+      // computed:计算属性
+      computed: {
+        FullName() {
+          return this.firstName + ' ' + this.lastName
+        }
+      },
+      methods: {
+        getFullName() {
+          return this.firstName + ' ' + this.lastName
+        }
       }
     })
   </script>
