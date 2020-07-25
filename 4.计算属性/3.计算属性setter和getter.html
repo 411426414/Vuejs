@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>计算属性的setter和getter的使用</title>
+</head>
+<body>
+
+  <div id="app">
+    <h2>{{fullName}}</h2>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        firstName: 'Tom',
+        lastName: 'Smith'
+      },
+      // computed:计算属性
+      computed: {
+        // fullName() {
+        //   return this.firstName + ' ' + this.lastName
+        // }
+        // name: 'codefwhy'
+        //计算属性一般是没有set方法，只读属性
+        fullName: {
+          set: function (newVaule) {
+            const name = newVaule.split(' ');
+            this.firstName = name[0];
+            this.lastName = name[1];
+
+          },
+          get:function () {
+            return this.firstName +' '+ this.lastName
+          }
+        }
+      },
+      methods: {
+        getFullName() {
+          return this.firstName + ' ' + this.lastName
+        }
+      }
+    })
+  </script>
+
+</body>
+</html>
