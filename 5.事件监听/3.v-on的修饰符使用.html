@@ -5,6 +5,7 @@
   <title>v-on的修饰符使用</title>
 </head>
 <body>
+<!--
 <ul>
   <style type="text/css">
     .a{
@@ -22,6 +23,61 @@
   <li class="b">.{keyCode | keyAlias} - 只当事件是从特定键触发时才触发回调。</li>
   <li class="b">.native - 监听组件根元素的原生事件。</li>
   <li class="b">.once - 只触发一次回调。</li>
-</ul>
+</ul>-->
+
+  <div id="app">
+    <div @click="divClick">
+      <!--
+      1、@click.stop 阻止事件冒泡
+      .stop - 调用event.stopPropagation()
+      -->
+      <button @click.stop="btnClick">@click.stop 阻止事件冒泡</button>
+    </div>
+    <!--
+      2、@click.prevent 阻止事件的默认行为
+      .prevent - 调用event.preventDefault()
+      -->
+    <form action="">
+      <input type="submit" value="提交" @click.prevent="submitClick">
+    </form>
+
+    <!--
+    3、监听某个键盘的按键
+    .{keyCode | keyAlias} - 只当事件是从特定键触发时才触发回调。
+    -->
+    <input type="text" @keyup.enter="keyUp"><!--监听回车键-->
+
+    <!--
+    4、@keyup.once只触发一次回调
+    -->
+    <button @click.once="once">once</button>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        msg: '基本模板'
+      },
+      methods: {
+        divClick() {
+          console.log('divClick');
+        },
+        btnClick() {
+          console.log('btnClick');
+        },
+        submitClick() {
+          console.log('submitClick');
+        },
+        keyUp() {
+          console.log('keyUp');
+        },
+        once() {
+          console.log('once');
+        }
+      }
+    })
+  </script>
 </body>
 </html>
