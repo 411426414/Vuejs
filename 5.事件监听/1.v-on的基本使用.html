@@ -2,9 +2,57 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>v-on的基本使用</title>
 </head>
 <body>
+  <!--
+  <ul>
+    <style>
+      .a{
+        list-style: square;
+      }
+      .b{
+        text-indent: 2rem;
+        list-style-type: circle;
+      }
+    </style>
+    <li class="a">在前端开发中,我们需要经常和用于交互。</li>
+    <li class="b">这个时候,我们就必须监听用户发生的时间，比如点击、拖拽、键盘事件等等</li>
+    <li class="b">在Vue中如何监听事件呢?使用v-on指令</li>
+    <li class="a">v-on介绍</li>
+    <li class="b">作用:绑定事件监听器</li>
+    <li class="b">缩写: @</li>
+    <li class="b">预期: Function | Inline Statement | Object</li>
+    <li class="b">参数: event</li>
+  </ul>
+  -->
 
+    <div id="app">
+      <h2>{{counter}}</h2>
+      <button v-on:click="counter--">-</button>
+      <button v-on:click="counter++">+</button>
+      <br />
+
+      <button v-on:click="decrement">-</button>
+      <button @click="increment()">+</button>
+    </div>
+
+    <script src="../js/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: '#app',
+        data: {
+          counter: 0
+        },
+        methods: {
+          increment() {
+            this.counter++
+          },
+          decrement() {
+            this.counter--
+          }
+        }
+      })
+    </script>
 </body>
 </html>
