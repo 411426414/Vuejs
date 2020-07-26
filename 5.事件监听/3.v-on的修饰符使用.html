@@ -2,9 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>v-on的修饰符使用</title>
 </head>
 <body>
-
+<ul>
+  <style type="text/css">
+    .a{
+      list-style: square;
+    }
+    .b{
+      text-indent: 2rem;
+      list-style-type: circle;
+    }
+  </style>
+  <li class="a">在某些情况下,我们拿到event的目的可能是进行一些事件处理。</li>
+  <li class="a">Vue提供了修饰符来帮助我们方便的处理一些事件:</li>
+  <li class="b">stop - 调用event.stopPropagation0.</li>
+  <li class="b">.prevent - 调用event.preventDefault0.</li>
+  <li class="b">.{keyCode | keyAlias} - 只当事件是从特定键触发时才触发回调。</li>
+  <li class="b">.native - 监听组件根元素的原生事件。</li>
+  <li class="b">.once - 只触发一次回调。</li>
+</ul>
 </body>
 </html>
