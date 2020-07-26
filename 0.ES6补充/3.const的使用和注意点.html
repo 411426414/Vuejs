@@ -2,9 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>const的使用和注意点</title>
 </head>
 <body>
+  <script>
+    // 1.注意一：const修饰的标识符被赋值之后，不能修改
+    // const name = 'code'
+    // name = 'abc'
+    /* 给const定义标识符再次赋值
+     * TypeError: Assignment to constant variable.
+     * 类型错误:对常量变量的赋值。
+     */
+    // console.log(name)
 
+
+    // 2.注意二：在使用const定义标识符，必须进行初始化
+    // const code
+    /*
+     * 使用const定义标识符时未赋值
+     * Uncaught SyntaxError: Missing initializer in const declaration
+     * 未捕获的SyntaxError:在const声明中缺少初始化器
+     */
+     // 3.注意三:常量的含义是指向的对象不能修改，但是可以改变对象内部的属性.
+    const obj = {
+      name: 'name',
+      age: 18,
+      height: 1.8
+    }
+    console.log(obj)
+
+    obj.name = 'code'
+    obj.age = 40
+    obj.height =  2
+    console.log(obj)
+  </script>
 </body>
 </html>
