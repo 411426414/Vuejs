@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-for使用过程中添加key</title>
+</head>
+<body>
+  <!--
+    .splice()
+    arrayObject.splice(index,howmany,item1,.....,itemX)
+    splice() 方法可删除从 index 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素。
+    如果从 arrayObject 中删除了元素，则返回的是含有被删除的元素的数组。
+
+    index：开始的元素
+    howmany:为X就删除X位元素，为0不删除元素
+    item1,.....,itemX：为添加的元素
+  -->
+  <div id="app">
+    <ul>
+      <li v-for="item in letters" v-bind:key="item">{{item}}</li>
+    </ul>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        letters: ['A','B','C','D','E']
+      }
+    })
+  </script>
+</body>
+</html>
