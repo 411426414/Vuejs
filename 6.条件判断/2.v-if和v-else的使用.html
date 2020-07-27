@@ -2,9 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <title>v-if和v-else的使用</title>
 </head>
 <body>
 
+<div id="app">
+  <h2 v-if="isShow">{{msg}}</h2>
+  <h1 v-else>isShow为false时，显示</h1>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      msg: '基本模板',
+      isShow: true
+    }
+  })
+</script>
 </body>
 </html>
