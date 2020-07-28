@@ -89,19 +89,30 @@ const app = new Vue({
 const nums = [10,90,20,80,30,60,70,50,40]
 
 // // 1.filter函数的使用
-// let newNums = nums.filter(function (n) {//n依次取出nums数组的元素
-//   return n < 60   //从数组取得的元素与60相比，返回布尔值，如果为真加入到新的数組中，否则过滤掉不添加
-// })
-// console.log(newNums);
+let filter = nums.filter(function (n) {//n依次取出nums数组的元素
+  return n < 60   //从数组取得的元素与60相比，返回布尔值，如果为真加入到新的数組中，否则过滤掉不添加
+})
+console.log(filter);//[10, 20, 30, 50, 40]
 
 // // 2. map函数的使用---对数组每个元素进行变化
-// let newNums = nums.map(function (n) {//n依次取出nums数组的元素
-//   return n * 2   //从数组取得的元素乘以2
-// })
-// console.log(newNums);
+let map = filter.map(function (n) {//n依次取出nums数组的元素
+  return n * 2   //从数组取得的元素乘以2
+})
+console.log(map);//[20, 40, 60, 100, 80]
 
+// 3.reduce函数的使用
+// reduce作用对数组中所有的内容进行汇总
+let reduce =map.reduce(function (preValue,n) {
+  return preValue + n
+},0)// 传入0：是初始化0
 
-
+// [20, 40, 60, 100, 80]
+// 第一次：preValue：0，n：20
+// 第二次：preValue：20，n：40
+// 第三次：preValue：60，n：60
+// 第四次：preValue：120，n：100
+// 第四次：preValue：220，n：80
+console.log(reduce);
 
 
 // // 1.需求:取出所有小于60的数字
