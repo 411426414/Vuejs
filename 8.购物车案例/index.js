@@ -64,14 +64,17 @@ const app = new Vue({
       // return totalPrice
 
       // 3. for(let i of this.books)
-      let totalPrice = 0
-      for(let item of this.books) {
-        totalPrice += item.price * item.count
-      }
-      return totalPrice
-    }
+      // let totalPrice = 0
+      // for(let item of this.books) {
+      //   totalPrice += item.price * item.count
+      // }
+      // return totalPrice
 
-    // reduce
+
+      return this.books.reduce(function (preValue,book) {
+        return preValue + book.price * book.count
+      },0)
+    }
   },
   filters: {
     showPrice(price) {
@@ -101,7 +104,7 @@ const nums = [10,90,20,80,30,60,70,50,40]
 // },0)
 
 
-let total = nums.filter(n => n < 60).map(n => n * 2).reduce((pre,n) => pre + n)
+// let total = nums.filter(n => n < 60).map(n => n * 2).reduce((pre,n) => pre + n)
 
 
 // // 1.filter函数的使用
