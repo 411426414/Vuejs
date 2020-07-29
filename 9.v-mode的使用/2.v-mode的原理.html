@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-mode的原理</title>
+</head>
+<body>
+  <!--v-model:双向绑定-->
+  <ul>
+    <li>v-model|其实是- -个语法糖，它的背后本质上是包含两个操作:</li>
+    <ul>
+      <li>1.v-bind绑定一个value属性</li>
+      <li>2.v-on指令给当前元素绑定input事件</li>
+    </ul>
+  </ul>
+
+
+  <div id="app">
+
+  <!--  <input type="text" v-model="msg">-->
+  <!--  <input type="text" :value="msg" v-on:input="valueChang">-->
+    <input type="text" :value="msg" @input="msg = $event.target.value">
+    <br />
+    {{msg}}
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        msg: '基本模板'
+      },
+      methods: {
+        valueChang(event) {
+          this.msg = event.target.value
+        }
+      }
+    })
+  </script>
+</body>
+</html>
