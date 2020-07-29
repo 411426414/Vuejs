@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-model与v-for、v-bind的值绑定</title>
+</head>
+<body>
+
+  <div id="app">
+    <label v-for="item in originHobbies">
+      <input type="checkbox" :id="item" :value="item" v-model="hobbies">{{item}}
+    </label>
+    <h2>你选择的水果是：{{hobbies}}</h2>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        hobbies: [],
+        originHobbies: ['篮球','足球','乒乓球','羽毛球','台球','高尔夫球']
+      }
+    })
+  </script>
+</body>
+</html>
