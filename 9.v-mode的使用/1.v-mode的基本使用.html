@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>v-mode的基本使用</title>
+</head>
+<body>
+  <!--
+  v-model:双向绑定
+  -->
+  <div id="app">
+    <input type="text" v-model="msg">
+    <br />
+    {{msg}}
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        msg: '基本模板'
+      }
+    })
+  </script>
+</body>
+</html>
