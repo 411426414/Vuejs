@@ -8,6 +8,8 @@
 
   <div id="app">
     <cpn></cpn>
+    <my-cpn></my-cpn>
+    <name></name>
   </div>
 
   <script src="../js/vue.js"></script>
@@ -21,6 +23,15 @@
         </div>
       `
 		})
+		const me = Vue.extend({
+			template: `
+        <div>
+          <h2>Name</h2>
+          <b>Sex</b>
+        </div>
+      `
+		})
+
 
 		// 2.注册组件(全局组件，意味着可以在多个Vue的实例下面使用)
 		// Vue.component('my-cpn',cpn)
@@ -33,7 +44,10 @@
 			},
       components: {
 				// cpn使用组件的标签名
-        cpn: cpn
+        // HTML文档使用创建构造器对象的标签名:创建构造器对象
+        cpn: cpn,
+        'my-cpn': me,
+        name: cpn
       }
 		})
   </script>
