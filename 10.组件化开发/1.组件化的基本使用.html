@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>组件化的基本使用</title>
+</head>
+<body>
+  <div id="app">
+    <!--3.使用组件-->
+    <my-cpn></my-cpn>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    // 1.创建构造器对象
+    const cpn = Vue.extend({
+      template: `
+        <div>
+          <h2>我是h2标签</h2>
+          <p>我是p标签</p>
+          <span>我是span标签</span>
+          <br/>
+          <b>我是b标签</b>
+        </div>
+      `
+    })
+
+    // 2.注册组件
+    Vue.component('my-cpn',cpn)
+  </script>
+</body>
+</html>
