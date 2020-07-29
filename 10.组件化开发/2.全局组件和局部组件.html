@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>全局组件和局部组件</title>
+</head>
+<body>
+
+  <div id="app">
+    <cpn></cpn>
+  </div>
+
+  <script src="../js/vue.js"></script>
+  <script>
+		// 1.创建构造器对象
+		const cpn = Vue.extend({
+			template: `
+        <div>
+          <h2>我是h2标签</h2>
+          <b>我是b标签</b>
+        </div>
+      `
+		})
+
+		// 2.注册组件(全局组件，意味着可以在多个Vue的实例下面使用)
+		// Vue.component('my-cpn',cpn)
+
+    // 在Vue实例中注册的组件才是局部组件
+		const app = new Vue({
+			el: '#app',
+			data: {
+				msg: '基本模板'
+			},
+      components: {
+				// cpn使用组件的标签名
+        cpn: cpn
+      }
+		})
+  </script>
+</body>
+</html>
