@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>父子组件通信-父传子props</title>
+</head>
+<body>
+
+  <div id="app">
+    <cpn :cmovies="movies" :cmsg="msg"></cpn>
+  </div>
+
+  <template id="cpn">
+    <div>
+      <p>{{cmovies}}</p>
+      <h2>{{cmsg}}</h2>
+    </div>
+  </template>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    // 父传子：props
+    const cpn = {
+    	template: '#cpn',
+      // 通过数组
+      // props: ['cmovies','cmsg'],
+
+      //通过对象
+      props: {
+    		// 1.类型的限制
+				/*cmovies: Array,
+				cmsg: String*/
+
+        // 2.提供一些类型和默认值
+				cmovies: {
+					type: Array,
+          default: []
+        },
+				cmsg: {
+					type: String, //数据类型
+          default: '模板', //默认数据
+          required: true
+        }
+      },
+      data() {
+    		return {}
+      }
+    }
+    const app = new Vue({
+      el: '#app',
+      data: {
+        msg: '基本模板',
+				movies: ['A计划', '战狼', '流浪地球', 'NBA']
+			},
+      components: {
+      	cpn: cpn
+      }
+    })
+  </script>
+</body>
+</html>
