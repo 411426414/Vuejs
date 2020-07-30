@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>函数返回变量和对象的区别</title>
+</head>
+<body>
+  <script type="text/javascript">
+
+    function fun() {
+    	/*
+        这里返回一个字面量对象，
+        每次返回的不是同一对象地址，
+        所以改变obj1的name属性，
+        obj2、obj3：name属性是不会有影响的
+      */
+    	return {
+    		name: 23457
+      }
+    }
+    let obj1 = fun()
+    let obj2 = fun()
+    let obj3 = fun()
+    obj1.name = 'abc'
+    document.write(obj1.name+'<br>'+obj2.name+'<br>'+obj3.name+'<br><br><br><br>')
+
+
+    const a = {
+    	name: 'why'
+    }
+		function b() {
+			return a
+		}
+		/*
+      因为这里返回一个已经定义好的对象，
+      每次返回的都是同一个内存地址，
+      所以只要其中提个对象属性被改变，
+      通过该方法返回对象的属性都会改变
+		*/
+		let obj4 = b()
+		let obj5 = b()
+		let obj6 = b()
+		obj4.name = '12345'
+		document.write(obj4.name+'<br>'+obj5.name+'<br>'+obj6.name+'<br>')
+
+  </script>
+</body>
+</html>
