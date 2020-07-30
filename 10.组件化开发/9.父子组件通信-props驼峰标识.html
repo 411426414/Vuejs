@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>父子组件通信-props驼峰标识</title>
+</head>
+<body>
+
+  <div id="app">
+    <cpn :c-info="info" :c-my-msg="msg"></cpn>
+  </div>
+
+  <!--变量定义驼峰时，使用时大写字母转换为’-对应小写字母‘-->
+  <template id="cpn">
+    <div>
+      <h2>{{cInfo}}</h2>
+      <h2>{{cMyMsg}}</h2>
+    </div>
+  </template>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const cpn ={
+    	template: '#cpn',
+      props: {
+    		cInfo: {
+    			type: Object,
+          default() {
+    				return {}
+          }
+        },
+        cMyMsg: {
+    			type: String,
+          default: ''
+				}
+      }
+    }
+    const app = new Vue({
+      el: '#app',
+      data: {
+      	info: {
+      		name: 'zj',
+          age: 21,
+          height: 1.75
+        },
+        msg: 'ABC'
+      },
+      components: {
+      	cpn: cpn
+      }
+    })
+  </script>
+</body>
+</html>
