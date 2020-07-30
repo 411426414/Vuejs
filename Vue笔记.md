@@ -66,17 +66,110 @@
 
 - 对象语法:作业：class='{类名：boolen}'
 - 数组语法
-- 
 
 ### 3. v-bind动态绑定style
 
 - 对象语法
 - 数组语法
 
-### 4. 计算属性
+## 四、 计算属性
 
-- 案例一：firstName + lastName
+### 1.计算属性的本质
 
-- 案例二：books ---> price
+- fullname:(set(),get())
 
-  
+### 2.计算属性和methods对比
+
+- 计算属性在多次使用时，只会调用一次
+- 它是有缓存的
+
+## 五、事件监听
+
+### 1.事件监听基本使用
+
+### 2.参数问题
+
+- btnClick
+- btnClick(event)
+- btnClick(abc,event) -> $event
+
+### 3.修饰符
+
+- stop
+- prevent
+- enter
+- once
+- native
+
+## 六、条件判断
+
+### 1.v-if/v-else/v-else-if
+
+### 2.登录小案例
+
+### 3.v-show
+
+- v-show和v-if的区别
+
+## 七、循环遍历
+
+### 1.遍历数组
+
+### 2.遍历对象
+
+- value
+- value，key
+- value，key，index
+
+### 3.数组方法的响应式
+
+### 4.作业的完成
+
+## 八、购物车案例
+
+## 九、v-model的使用
+
+### 1.v-model的基本使用
+
+- v-model =》v-bind:value,v-on:input
+
+### 2.v-model和radio、checkbox、select
+
+### 3.修饰符
+
+- lazy
+- number
+- trim
+
+## 十、组件化开发
+
+### 1.认识组件化
+
+### 2.组件的基本使用
+
+### 3.全局组件和局部组件
+
+### 4.父组件和子组件
+
+### 5.注册组件的语法糖
+
+### 6.模板的分离写法
+
+- script
+- template
+
+### 7.数据存放
+
+- 子组件不能访问父组件
+- 子组件中有自己的data，而且必须是一个函数
+- 为什么是一个函数
+
+### 8.父子组件的通信
+
+- 父传子：props
+- 子传父：$emit
+
+### 9.项目运行
+
+- npm install
+- npm run serve
