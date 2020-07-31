@@ -8,6 +8,7 @@
 
   <div id="app">
     <cpn></cpn>
+    <cpn ref="cpn"></cpn>
     <button @click="btnClick">按钮</button>
   </div>
 
@@ -26,13 +27,27 @@
       },
       methods: {
 				btnClick() {
+					// 1.$children
+					console.log('$children');
 					console.log(this.$children);
 					this.$children[0].showMessage()
+					console.log(this.$children[0].name);
+
+					// 2.$refs
+					console.log('$refs');
+					console.log(this.$refs);
+					console.log(this.$refs.cpn);
+					console.log(this.$refs.cpn.name);
 				}
       },
       components: {
       	cpn: {
       		template: '#cpn',
+          data() {
+      			return {
+      				name: '我是子组件的name'
+            }
+          },
           methods: {
       			showMessage() {
 							console.log('showMessage');
