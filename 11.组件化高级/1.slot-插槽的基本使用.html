@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>slot-插槽的基本使用</title>
+</head>
+<body>
+
+  <div id="app">
+    <div style="float: left">
+      <p>插槽的基本使用-无默认值</p>
+      <cpn><button>cpn-按钮</button></cpn>
+      <cpn><i>cpn-i标签</i></cpn>
+      <cpn><button>cpn-按钮</button></cpn>
+    </div>
+
+    <div style="float: left;margin-left: 50px;">
+      <p>插槽的基本使用-默认值-标签中如果值有则覆盖</p>
+      <mycpn></mycpn>
+      <mycpn><i>myCpn-i标签</i></mycpn>
+      <mycpn><span>myCpn-span标签</span></mycpn>
+      <mycpn></mycpn>
+    </div>
+  </div>
+
+  <template id="cpn">
+    <div>
+      <h2>我是组件cpn-h2</h2>
+      <p>我是组件cpn-p</p>
+      <slot></slot>
+    </div>
+  </template>
+
+  <template id="myCpn">
+    <div>
+      <h2>我是组件myCpn-h2</h2>
+      <p>我是组件myCpn-p</p>
+      <slot><button>myCpn-按钮</button></slot>
+    </div>
+  </template>
+
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        msg: '基本模板'
+      },
+      components: {
+      	cpn: {
+					template: '#cpn'
+        },
+				mycpn: {
+					template: '#myCpn'
+        }
+      }
+    })
+  </script>
+</body>
+</html>
