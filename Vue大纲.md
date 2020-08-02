@@ -60,7 +60,6 @@
 ### 1.v-bind绑定基本属性
 - v-bind:sr
 - :href
-- 
 
 ### 2. v-bind动态绑定class
 
