@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>v-bind指令</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>v-bind指令</title>
 </head>
+
 <body>
 
-      <div id="app">
-        <!-- 错误的做法:这里不可以使用mustache语法-->
-        <!--<img src="{{ imgURL}}" alt-=">-->
+  <div id="app">
+    <!-- 错误的做法:这里不可以使用mustache语法-->
+    <!--<img src="{{ imgURL}}" alt-=">-->
 
-        <!--正确的做法:使用v-bind指令-->
-        <img v-bind:src="imgUrl" alt="">
+    <!--正确的做法:使用v-bind指令-->
+    <img v-bind:src="imgUrl" alt="">
 
-        <!--语法糖的写法-->
-        <img :src="imgUrl" alt="">
-      </div>
+    <!--语法糖的写法-->
+    <img :src="imgUrl" alt="">
+  </div>
 
-      <script src="../js/vue.js"></script>
-      <script>
-        const app = new Vue({
-          el: '#app',
-          data: {
-            msg: '基本模板',
-            imgUrl: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1421043483,554405077&fm=26&gp=0.jpg'
-          }
-        })
-      </script>
+  <script src="../js/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        msg: '基本模板',
+        imgUrl: 'https://dss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=1421043483,554405077&fm=26&gp=0.jpg'
+      }
+    })
+  </script>
 </body>
+
 </html>
