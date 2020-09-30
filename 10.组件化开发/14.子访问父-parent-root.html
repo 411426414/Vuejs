@@ -49,6 +49,11 @@
                                     console.log('访问父组件');
                                     console.log(this.$parent);
                                     console.log(this.$parent.name);
+
+                                    // 2.访问根组件$parent
+                                    console.log('访问Vue实例');
+                                    console.log(this.$root);
+                                    console.log(this.$root.msg);
                                 }
                             }
                         }
