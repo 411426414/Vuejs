@@ -11,7 +11,14 @@
     <div id='app'>
         <cpn></cpn>
     </div>
+
     <template id="cpn">
+        <div>
+            我是cpn组件
+            <Ccpn></Ccpn>
+        </div>
+    </template>
+    <template id="Ccpn">
         <div>
             <div>我的子组件</div>
             <button @click="btnClick">按钮</button>
@@ -28,11 +35,21 @@
             components: {
                 cpn: {
                     template: '#cpn',
-                    methods: {
-                        btnClick() {
-                            // 1.访问父组件$parent
-                            console.log(this.$parent);
-                            console.log(this.$parent.msg);
+                    data() {
+                        return {
+                            name: '我是cpn组件的name'
+                        }
+                    },
+                    components: {
+                        Ccpn: {
+                            template: '#Ccpn',
+                            methods: {
+                                btnClick() {
+                                    // 1.访问父组件$parent
+                                    console.log(this.$parent);
+                                    console.log(this.$parent.name);
+                                }
+                            }
                         }
                     }
                 }
