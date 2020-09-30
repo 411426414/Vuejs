@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>子访问父-parent-root</title>
+</head>
+
+<body>
+    <div id='app'>
+        <cpn></cpn>
+    </div>
+    <template id="cpn">
+        <div>
+            <div>我的子组件</div>
+            <button @click="btnClick">按钮</button>
+        </div>
+    </template>
+
+    <script src='../js/vue.js'></script>
+    <script type='text/javascript'>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                msg: 'hello world'
+            },
+            components: {
+                cpn: {
+                    template: '#cpn',
+                    methods: {
+                        btnClick() {
+                            // 1.访问父组件$parent
+                            console.log(this.$parent);
+                            console.log(this.$parent.msg);
+                        }
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>
